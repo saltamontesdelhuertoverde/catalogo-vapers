@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catálogo de Vapers — Oxbar & Lost Mary</title>
+<meta name="description" content="Catálogo visual de vapers. Filtros rápidos y vista destacada del sabor.">
+<style>
+:root{
+  --bg: #0b0f17;
+  --bg2: #0d121c;
+  --card: #0f1522;
+  --muted: #9aa3b2;
+  --text: #ecf1f8;
+  --ring:  #2a3b63;
+  --accent: #7ab8ff;
+  --accent2: #6ee7b7;
+  --shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box} html,body{height:100%}
+body{
+  margin:0; font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 120% -10%, #14223a 0%, transparent 60%),
+              radial-gradient(1200px 600px at -10% 110%, #1a2f55 0%, transparent 60%),
+              linear-gradient(180deg, var(--bg), var(--bg2) 60%);
+  color:var(--text);
+}
+header{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter: blur(10px) saturate(120%);
+  background: rgba(10,14,22,.6);
+  border-bottom: 1px solid #1a2438;
+  padding: 14px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.brand{display:flex; align-items:center; gap:10px}
+.brand b{font-size:18px; letter-spacing:.3px}
+.badge{
+  border:1px solid #24324e; background:#0c1322; color:#c7d2e4;
+  padding:6px 10px; border-radius:999px; font-size:12px;
+}
+.filters{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+select{
+  appearance:none; -webkit-appearance:none;
+  padding:12px 38px 12px 12px; border-radius:12px; border:1px solid #223048; color:var(--text);
+  background:
+    linear-gradient(180deg,#0b1220,#0a0f1a) padding-box,
+    linear-gradient(180deg, #1f2b44, #1b2740) border-box;
+  position:relative;
+}
+select:focus{ outline:2px solid var(--ring); outline-offset:2px }
+.select-wrap{ position:relative }
+.select-wrap::after{
+  content:'▾'; position:absolute; right:12px; top:50%; transform:translateY(-50%); pointer-events:none; color:#8da1b5; font-size:12px;
+}
+
+.container{ max-width:1080px; margin:18px auto 40px; padding: 0 16px; }
+.hero{
+  display:grid; grid-template-columns: 1.15fr 1fr; gap:18px;
+  background: linear-gradient(180deg,#0d1424,#0c1322);
+  border:1px solid #1c2740; border-radius:22px; padding:16px; box-shadow: var(--shadow);
+}
+@media (max-width:900px){ .hero{ grid-template-columns:1fr } }
+.hero-img{
+  border-radius:18px; border:1px solid #1a2540; background: #0b101a;
+  display:flex; align-items:center; justify-content:center; min-height:360px;
+}
+.hero-img img{ max-width:100%; max-height:520px; object-fit:contain; border-radius:14px }
+.hero-info{ display:flex; flex-direction:column; gap:10px }
+.title{ font-size:28px; line-height:1.12; margin:6px 0 2px }
+.subtitle{ color:#a8b8cd }
+.chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px }
+.pill{ border:1px solid #233257; background:#0d1426; border-radius:999px; padding:6px 10px; font-size:12px; color:#cbd7ea }
+
+.grid{ display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:14px; margin-top:16px }
+@media (max-width:1080px){ .grid{ grid-template-columns: repeat(3,1fr) } }
+@media (max-width:760px){ .grid{ grid-template-columns: repeat(2,1fr) } }
+@media (max-width:480px){ .grid{ grid-template-columns: 1fr } }
+
+.card{
+  background: linear-gradient(180deg,#0d1426,#0b101a); border:1px solid #1a2540; border-radius:16px;
+  padding:10px; display:flex; flex-direction:column; gap:8px; cursor:pointer;
+  transition: transform .1s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover{ transform: translateY(-2px); border-color:#2a477a; box-shadow: 0 12px 30px rgba(0,0,0,.35) }
+.card:focus-within{ outline:2px solid var(--ring); outline-offset:3px }
+.card img{ width:100%; aspect-ratio:1/1; border-radius:12px; object-fit:cover; border:1px solid #1a2640; background:#0a0f18 }
+.card b{ font-size:15px }
+.meta{ font-size:12px; color:#9fb0c7 }
+
+footer{ color:#8a94a7; text-align:center; font-size:12px; margin: 26px 0 60px }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="badge">Catálogo</span>
+    <b>Vapers</b>
+  </div>
+  <div class="filters" role="group" aria-label="Filtros rápidos">
+    <span class="badge">Filtrar:</span>
+    <span class="select-wrap"><select id="fNic" aria-label="Con o sin nicotina"></select></span>
+    <span class="select-wrap"><select id="fCal" aria-label="Número de caladas"></select></span>
+    <span class="select-wrap"><select id="fMar" aria-label="Marca"></select></span>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" aria-label="Detalle">
+    <div class="hero-img"><img id="heroImg" alt="Imagen del sabor"></div>
+    <div class="hero-info">
+      <h1 class="title" id="heroTitle"></h1>
+      <div class="subtitle" id="heroSubtitle"></div>
+      <div class="chips" id="heroChips"></div>
+    </div>
+  </section>
+
+  <section aria-label="Resultados">
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<footer>
+  Diseño limpio · responsive · sin dependencias
+</footer>
+
+<script>
+const ITEMS = [{"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Blue Mint", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/BlueMint.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Strawberry Mango", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/StrawberryMango_973ea4bf-7097-45bf-bf5a-2c9f4de6958e.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Lost Mary", "modelo": "BM600", "capacidad_ml": "2", "sabor_es": "Triple Mango", "imagen_url": "https://cityvape.eu/7009-large_default/lost-mary-bm600-triple-mango.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Watermelon Ice", "imagen_url": "https://masquevapor.com/87647-large_default/disposable-vape-lost-mary-bm1000-watermelon-ice-20mg-2ml.jpg"}];
+
+const $fNic = document.getElementById('fNic');
+const $fCal = document.getElementById('fCal');
+const $fMar = document.getElementById('fMar');
+const $grid = document.getElementById('grid');
+const $heroImg = document.getElementById('heroImg');
+const $heroTitle = document.getElementById('heroTitle');
+const $heroSubtitle = document.getElementById('heroSubtitle');
+const $heroChips = document.getElementById('heroChips');
+
+const dedupe = arr => [...new Set(arr.filter(Boolean))];
+
+function populateFilters(items){
+  $fNic.innerHTML = '<option value="">Con o sin nicotina</option>' + dedupe(items.map(o=>o.nicotina)).map(v=>`<option value="${v}">${v}</option>`).join('');
+  $fCal.innerHTML = '<option value="">Número de caladas</option>';
+  $fMar.innerHTML = '<option value="">Marca</option>' + dedupe(items.map(o=>o.marca)).map(v=>`<option value="${v}">${v}</option>`).join('');
+}
+
+function filter(items){
+  const a = $fNic.value, b = $fCal.value, c = $fMar.value;
+  return items.filter(o =>
+    (!a || o.nicotina===a) &&
+    (!b || String(o.caladas)===b) &&
+    (!c || o.marca===c)
+  );
+}
+
+function renderGrid(items){
+  $grid.innerHTML = '';
+  items.forEach(o=>{
+    const card = document.createElement('div'); card.className='card'; card.tabIndex=0;
+    const img = document.createElement('img'); img.alt=o.sabor_es; img.src = o.imagen_url;
+    const name = document.createElement('b'); name.textContent = o.sabor_es;
+    const meta = document.createElement('div'); meta.className='meta'; meta.textContent = o.marca + (o.modelo? ' · '+o.modelo : '');
+    card.appendChild(img); card.appendChild(name); card.appendChild(meta);
+    card.addEventListener('click', ()=>focus(o));
+    card.addEventListener('keypress', e => { if(e.key==='Enter' || e.key===' ') focus(o); });
+    $grid.appendChild(card);
+  });
+}
+
+function focus(o){
+  $heroImg.src = o.imagen_url;
+  $heroTitle.textContent = o.sabor_es;
+  $heroSubtitle.textContent = o.marca + (o.modelo? ' · '+o.modelo : '');
+  $heroChips.innerHTML = '';
+  if(o.capacidad_ml) $heroChips.innerHTML += `<span class="pill">${o.capacidad_ml} ml</span>`;
+  if(o.caladas) $heroChips.innerHTML += `<span class="pill">${o.caladas} caladas</span>`;
+}
+
+function onNicChange(){
+  const val = $fNic.value;
+  const source = val ? ITEMS.filter(o=>o.nicotina===val) : ITEMS;
+  const cal = dedupe(source.map(o=>String(o.caladas)));
+  $fCal.innerHTML = '<option value="">Número de caladas</option>' + cal.map(v=>`<option value="${v}">${v}</option>`).join('');
+  update();
+}
+
+function update(){
+  const list = filter(ITEMS);
+  renderGrid(list);
+  if(list.length) focus(list[0]);
+}
+
+populateFilters(ITEMS);
+$fNic.addEventListener('change', onNicChange);
+$fCal.addEventListener('change', update);
+$fMar.addEventListener('change', update);
+onNicChange(); // inicializa caladas y render
+</script>
+</body>
+</html>
