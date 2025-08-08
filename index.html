@@ -4,25 +4,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Catálogo — OXBAR Mini + Lost Mary BM1000</title>
-<meta name="description" content="Catálogo visual con filtros. Oxbar Mini (12 sabores) y Lost Mary BM1000.">
+<title>Catálogo — Lost Mary BM1000 Turbo</title>
+<meta name="description" content="Lost Mary BM1000 Turbo · 2 ml · ≈1000 caladas · sabores oficiales. Catálogo visual con filtros.">
 <style>
-:root{
-  --bg: #0b0f17; --bg2: #0d121c; --card: #0f1522; --muted: #9aa3b2; --text: #ecf1f8;
-  --ring:#2a3b63; --accent:#7ab8ff; --accent2:#6ee7b7; --shadow: 0 20px 40px rgba(0,0,0,.35);
-}
+:root{ --bg:#0b0f17; --bg2:#0d121c; --card:#0f1522; --muted:#9aa3b2; --text:#ecf1f8; --ring:#2a3b63; --accent:#7ab8ff; --shadow:0 20px 40px rgba(0,0,0,.35) }
 *{box-sizing:border-box} html,body{height:100%}
 body{
-  margin:0; font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  margin:0; font-family: Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
   background: radial-gradient(1200px 600px at 120% -10%, #14223a 0%, transparent 60%),
               radial-gradient(1200px 600px at -10% 110%, #1a2f55 0%, transparent 60%),
               linear-gradient(180deg, var(--bg), var(--bg2) 60%);
   color:var(--text);
 }
-header{ position:sticky; top:0; z-index:10; backdrop-filter: blur(10px) saturate(120%);
-  background: rgba(10,14,22,.6); border-bottom: 1px solid #1a2438;
-  padding: 14px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px;
-}
+header{ position:sticky; top:0; z-index:10; backdrop-filter: blur(10px) saturate(120%); background: rgba(10,14,22,.6); border-bottom: 1px solid #1a2438; padding: 14px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px }
 .brand{display:flex; align-items:center; gap:10px}
 .brand .badge{border:1px solid #24324e; background:#0c1322; color:#c7d2e4; padding:6px 10px; border-radius:999px; font-size:12px}
 .brand b{font-size:18px; letter-spacing:.3px}
@@ -30,9 +24,7 @@ header{ position:sticky; top:0; z-index:10; backdrop-filter: blur(10px) saturate
 select{
   appearance:none; -webkit-appearance:none;
   padding:12px 38px 12px 12px; border-radius:12px; border:1px solid #223048; color:var(--text);
-  background:
-    linear-gradient(180deg,#0b1220,#0a0f1a) padding-box,
-    linear-gradient(180deg, #1f2b44, #1b2740) border-box;
+  background: linear-gradient(180deg,#0b1220,#0a0f1a) padding-box, linear-gradient(180deg, #1f2b44, #1b2740) border-box;
   position:relative;
 }
 select:focus{ outline:2px solid var(--ring); outline-offset:2px }
@@ -40,13 +32,9 @@ select:focus{ outline:2px solid var(--ring); outline-offset:2px }
 .select-wrap::after{ content:'▾'; position:absolute; right:12px; top:50%; transform:translateY(-50%); pointer-events:none; color:#8da1b5; font-size:12px }
 
 .container{ max-width:1080px; margin:18px auto 40px; padding: 0 16px; }
-.hero{
-  display:grid; grid-template-columns: 1.15fr 1fr; gap:18px;
-  background: linear-gradient(180deg,#0d1424,#0c1322);
-  border:1px solid #1c2740; border-radius:22px; padding:16px; box-shadow: var(--shadow);
-}
+.hero{ display:grid; grid-template-columns: 1.15fr 1fr; gap:18px; background: linear-gradient(180deg,#0d1424,#0c1322); border:1px solid #1c2740; border-radius:22px; padding:16px; box-shadow: var(--shadow) }
 @media (max-width:900px){ .hero{ grid-template-columns:1fr } }
-.hero-img{ border-radius:18px; border:1px solid #1a2540; background: #0b101a; display:flex; align-items:center; justify-content:center; min-height:360px }
+.hero-img{ border-radius:18px; border:1px solid #1a2540; background:#0b101a; display:flex; align-items:center; justify-content:center; min-height:360px }
 .hero-img img{ max-width:100%; max-height:520px; object-fit:contain; border-radius:14px }
 .hero-info{ display:flex; flex-direction:column; gap:10px }
 .title{ font-size:28px; line-height:1.12; margin:6px 0 2px }
@@ -62,25 +50,20 @@ select:focus{ outline:2px solid var(--ring); outline-offset:2px }
 .card{ background: linear-gradient(180deg,#0d1426,#0b101a); border:1px solid #1a2540; border-radius:16px; padding:10px; display:flex; flex-direction:column; gap:8px; cursor:pointer; transition: transform .1s ease, box-shadow .2s ease, border-color .2s ease }
 .card:hover{ transform: translateY(-2px); border-color:#2a477a; box-shadow: 0 12px 30px rgba(0,0,0,.35) }
 .card img{ width:100%; aspect-ratio:1/1; border-radius:12px; object-fit:cover; border:1px solid #1a2640; background:#0a0f18 }
+.card .ph{ width:100%; aspect-ratio:1/1; border-radius:12px; display:flex; align-items:center; justify-content:center; border:1px dashed #2a3550; color:#8fa1ba; background:#0a0f18; padding:8px; text-align:center }
 .card b{ font-size:15px }
 .meta{ font-size:12px; color:#9fb0c7 }
 
 footer{ color:#8a94a7; text-align:center; font-size:12px; margin: 26px 0 60px }
-
-/* Placeholder when no image */
-.card .ph, .hero-img .ph{
-  width:100%; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
-  border-radius:12px; border:1px dashed #2a3550; color:#8fa1ba; background:#0a0f18; padding:8px; text-align:center;
-}
 </style>
 </head>
 <body>
 <header>
   <div class="brand">
-    <span class="badge">Catálogo</span>
-    <b>OXBAR Mini + Lost Mary BM1000</b>
+    <span class="badge">Lost Mary</span>
+    <b>BM1000 Turbo · Sabores</b>
   </div>
-  <div class="filters" role="group" aria-label="Filtros rápidos">
+  <div class="filters" role="group" aria-label="Filtros">
     <span class="select-wrap"><select id="fNic" aria-label="Con o sin nicotina"></select></span>
     <span class="select-wrap"><select id="fCal" aria-label="Número de caladas"></select></span>
     <span class="select-wrap"><select id="fMar" aria-label="Marca"></select></span>
@@ -105,10 +88,10 @@ footer{ color:#8a94a7; text-align:center; font-size:12px; margin: 26px 0 60px }
   </section>
 </main>
 
-<footer>Oxbar Mini: oxbar.com/mini · Lost Mary BM1000: lostmary.es</footer>
+<footer>Fuente: lostmary.es (BM1000 Turbo) + distribuidores</footer>
 
 <script>
-const ITEMS = [{"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Blue Mint", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/BlueMint.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Coconut Melon", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/CoconutMelon_c8167ebb-2259-4fda-9c1b-d8ebd3ccea2a.png?v=1693906508"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Fuji Apple Melon", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/FujiAppleMelon_ede98332-44ea-4fef-8da8-e1a5938b1a20.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Grape Cranberries", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/GrapeCranberries.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Lemon & Lime", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/lemon_lime.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Mango Slushy", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/MangoSlushy.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Pineapple Apple Pear", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/PineappleApplePear.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Rainbow Drop", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/RainbowDrop_960be059-1378-4d3c-b78e-e11e3fc3fa91.png?v=1693906507"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Sea Salt Litchi", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/SeaSaltLitchi.png?v=1693906509"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Strawberry Mango", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/StrawberryMango_973ea4bf-7097-45bf-bf5a-2c9f4de6958e.png?v=1693906510"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Strawberry Marshmallow", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/StrawberryMarshmallow.png?v=1693906509"}, {"nicotina": "con", "caladas": "600", "marca": "Oxbar", "modelo": "Mini", "capacidad_ml": "2", "sabor_es": "Watermelon Cherry", "imagen_url": "https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/WatermelonCherry_435bf301-f2e0-4f66-b8fa-ec47b7ccb812.png?v=1693906510"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Triple Melon", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Triple Mango", "imagen_url": "https://vaperhouse.es/8632-large_default/vaper-desechable-lost-mary-bm1000-triple-mango.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Strawberry Kiwi", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Pineapple Ice", "imagen_url": "https://masquevapor.com/87628-large_default/disposable-vape-lost-mary-bm1000-pineapple-ice-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Strawberry Guava", "imagen_url": "https://masquevapor.com/87643-large_default/disposable-vape-lost-mary-bm1000-strawberry-guava-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Pineapple Coconut", "imagen_url": "https://masquevapor.com/87630-large_default/disposable-vape-lost-mary-bm1000-pineapple-coconut-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Pineapple Mango", "imagen_url": "https://masquevapor.com/87629-large_default/disposable-vape-lost-mary-bm1000-pineapple-mango-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Grape", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Blueberry", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Blueberry-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Peach Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Peach-Ice-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Menthol", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Menthol-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Lemon Lime", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Lemon-Lime-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Cherry Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Cherry-Ice-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Watermelon Ice", "imagen_url": "https://masquevapor.com/87647-large_default/disposable-vape-lost-mary-bm1000-watermelon-ice-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Blueberry Sour Raspberry", "imagen_url": "https://masquevapor.com/87613-large_default/disposable-vape-lost-mary-bm1000-blueberry-sour-raspberry-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Rose Lemonade", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000", "capacidad_ml": "2", "sabor_es": "Strawberry Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Strawberry-Ice-2-600x600.jpg"}];
+const ITEMS = [{"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Triple Melon", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Triple Mango", "imagen_url": "https://vaperhouse.es/8632-large_default/vaper-desechable-lost-mary-bm1000-triple-mango.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Strawberry Kiwi", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Pineapple Ice", "imagen_url": "https://masquevapor.com/87628-large_default/disposable-vape-lost-mary-bm1000-pineapple-ice-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Strawberry Guava", "imagen_url": "https://masquevapor.com/87643-large_default/disposable-vape-lost-mary-bm1000-strawberry-guava-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Pineapple Coconut", "imagen_url": "https://masquevapor.com/87630-large_default/disposable-vape-lost-mary-bm1000-pineapple-coconut-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Pineapple Mango", "imagen_url": "https://masquevapor.com/87629-large_default/disposable-vape-lost-mary-bm1000-pineapple-mango-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Grape", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Blueberry", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Blueberry-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Peach Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Peach-Ice-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Menthol", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Menthol-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Lemon Lime", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Lemon-Lime-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Cherry Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Cherry-Ice-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Watermelon Ice", "imagen_url": "https://masquevapor.com/87647-large_default/disposable-vape-lost-mary-bm1000-watermelon-ice-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Blueberry Sour Raspberry", "imagen_url": "https://masquevapor.com/87613-large_default/disposable-vape-lost-mary-bm1000-blueberry-sour-raspberry-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Rose Lemonade", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Strawberry Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Strawberry-Ice-2-600x600.jpg"}];
 
 const $fNic = document.getElementById('fNic');
 const $fCal = document.getElementById('fCal');
@@ -126,6 +109,9 @@ function populateFilters(items){
   $fNic.innerHTML = '<option value="">Con o sin nicotina</option>' + dedupe(items.map(o=>o.nicotina)).map(v=>`<option value="${v}">${v}</option>`).join('');
   $fCal.innerHTML = '<option value="">Número de caladas</option>' + dedupe(items.map(o=>String(o.caladas))).map(v=>`<option value="${v}">${v}</option>`).join('');
   $fMar.innerHTML = '<option value="">Marca</option>' + dedupe(items.map(o=>o.marca)).map(v=>`<option value="${v}">${v}</option>`).join('');
+  if (dedupe(items.map(o=>o.marca)).length === 1) $fMar.value = items[0].marca;
+  if (dedupe(items.map(o=>String(o.caladas))).length === 1) $fCal.value = String(items[0].caladas);
+  if (dedupe(items.map(o=>o.nicotina)).length === 1) $fNic.value = items[0].nicotina;
 }
 
 function filter(items){
