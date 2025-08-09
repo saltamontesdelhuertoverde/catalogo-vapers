@@ -53,6 +53,34 @@
   text-transform: uppercase;
   pointer-events: none;
 }
+
+.card {
+  border: 2px solid red !important;
+  background: #fff3f3 !important;
+}
+.imgbox .ph {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa3af;
+  border: 1px dashed #d4d7de;
+  margin: 12px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 8px;
+  background: #ffeaea;
+  font-weight: bold;
+}
+#errorBox {
+  background: #ffcccc;
+  color: #660000;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid red;
+  font-weight: bold;
+}
 </style>
 </head>
 <body>
@@ -107,7 +135,16 @@ function placeholder(text){
 }
 
 function mountImage(imgbox, urls, alt){
-  if(!urls || !urls.length) { imgbox.appendChild(placeholder(alt)); return; }
+  if(!urls || !urls.length) { imgbox.appendChild(placeholder("SIN IMAGEN")); return; }
+  let i = 0;
+  const img = document.createElement('img'); img.alt = alt; img.loading='lazy';
+  img.src = urls[i];
+  img.onerror = () => { 
+    console.warn("Error cargando imagen:", img.src);
+    i++; if(i < urls.length) img.src = urls[i]; else img.replaceWith(placeholder("SIN IMAGEN")); 
+  };
+  imgbox.appendChild(img);
+}
   let i = 0;
   const img = document.createElement('img'); img.alt = alt; img.loading='lazy';
   img.src = urls[i];
@@ -154,6 +191,7 @@ function render(list){
 }
 
 function apply(){
+  try {
   const term = (q.value||'').toLowerCase().trim();
   const out = ITEMS.filter(o => {
     const b = (o.brand||'').toUpperCase();
@@ -173,7 +211,11 @@ function apply(){
 
 
 tabs.forEach(t => t.addEventListener('click', () => { tabs.forEach(x => x.classList.remove('active')); t.classList.add('active'); currentBrand = t.dataset.brand || ''; apply(); }));
-q.addEventListener('input', apply);
+} catch(e) {
+    console.error("Error en apply():", e);
+    grid.innerHTML = '<div id="errorBox">ERROR AL CARGAR CATÁLOGO: ' + e.message + '</div>';
+  }
+  q.addEventListener('input', apply);
 apply();
 </script>
 
