@@ -1,173 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Catálogo — Lost Mary BM1000 Turbo</title>
-<meta name="description" content="Lost Mary BM1000 Turbo · 2 ml · ≈1000 caladas · sabores oficiales. Catálogo visual con filtros.">
+<title>Catálogo Vapers — Vaya Cachimbas</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{ --bg:#0b0f17; --bg2:#0d121c; --card:#0f1522; --muted:#9aa3b2; --text:#ecf1f8; --ring:#2a3b63; --accent:#7ab8ff; --shadow:0 20px 40px rgba(0,0,0,.35) }
-*{box-sizing:border-box} html,body{height:100%}
-body{
-  margin:0; font-family: Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-  background: radial-gradient(1200px 600px at 120% -10%, #14223a 0%, transparent 60%),
-              radial-gradient(1200px 600px at -10% 110%, #1a2f55 0%, transparent 60%),
-              linear-gradient(180deg, var(--bg), var(--bg2) 60%);
-  color:var(--text);
-}
-header{ position:sticky; top:0; z-index:10; backdrop-filter: blur(10px) saturate(120%); background: rgba(10,14,22,.6); border-bottom: 1px solid #1a2438; padding: 14px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px }
-.brand{display:flex; align-items:center; gap:10px}
-.brand .badge{border:1px solid #24324e; background:#0c1322; color:#c7d2e4; padding:6px 10px; border-radius:999px; font-size:12px}
-.brand b{font-size:18px; letter-spacing:.3px}
-.filters{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
-select{
-  appearance:none; -webkit-appearance:none;
-  padding:12px 38px 12px 12px; border-radius:12px; border:1px solid #223048; color:var(--text);
-  background: linear-gradient(180deg,#0b1220,#0a0f1a) padding-box, linear-gradient(180deg, #1f2b44, #1b2740) border-box;
-  position:relative;
-}
-select:focus{ outline:2px solid var(--ring); outline-offset:2px }
-.select-wrap{ position:relative }
-.select-wrap::after{ content:'▾'; position:absolute; right:12px; top:50%; transform:translateY(-50%); pointer-events:none; color:#8da1b5; font-size:12px }
-
-.container{ max-width:1080px; margin:18px auto 40px; padding: 0 16px; }
-.hero{ display:grid; grid-template-columns: 1.15fr 1fr; gap:18px; background: linear-gradient(180deg,#0d1424,#0c1322); border:1px solid #1c2740; border-radius:22px; padding:16px; box-shadow: var(--shadow) }
-@media (max-width:900px){ .hero{ grid-template-columns:1fr } }
-.hero-img{ border-radius:18px; border:1px solid #1a2540; background:#0b101a; display:flex; align-items:center; justify-content:center; min-height:360px }
-.hero-img img{ max-width:100%; max-height:520px; object-fit:contain; border-radius:14px }
-.hero-info{ display:flex; flex-direction:column; gap:10px }
-.title{ font-size:28px; line-height:1.12; margin:6px 0 2px }
-.subtitle{ color:#a8b8cd }
-.chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px }
-.pill{ border:1px solid #233257; background:#0d1426; border-radius:999px; padding:6px 10px; font-size:12px; color:#cbd7ea }
-
-.grid{ display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:14px; margin-top:16px }
-@media (max-width:1080px){ .grid{ grid-template-columns: repeat(3,1fr) } }
-@media (max-width:760px){ .grid{ grid-template-columns: repeat(2,1fr) } }
-@media (max-width:480px){ .grid{ grid-template-columns: 1fr } }
-
-.card{ background: linear-gradient(180deg,#0d1426,#0b101a); border:1px solid #1a2540; border-radius:16px; padding:10px; display:flex; flex-direction:column; gap:8px; cursor:pointer; transition: transform .1s ease, box-shadow .2s ease, border-color .2s ease }
-.card:hover{ transform: translateY(-2px); border-color:#2a477a; box-shadow: 0 12px 30px rgba(0,0,0,.35) }
-.card img{ width:100%; aspect-ratio:1/1; border-radius:12px; object-fit:cover; border:1px solid #1a2640; background:#0a0f18 }
-.card .ph{ width:100%; aspect-ratio:1/1; border-radius:12px; display:flex; align-items:center; justify-content:center; border:1px dashed #2a3550; color:#8fa1ba; background:#0a0f18; padding:8px; text-align:center }
-.card b{ font-size:15px }
-.meta{ font-size:12px; color:#9fb0c7 }
-
-footer{ color:#8a94a7; text-align:center; font-size:12px; margin: 26px 0 60px }
+:root{--bg:#ffffff;--text:#111928;--muted:#6b7280;--card:#f5f7fb;--border:#e5e7eb;--shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.hero{text-align:center;padding:30px 16px 12px}
+.hero img{max-width:min(320px,60vw);height:auto;display:block;margin:0 auto}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px 60px}
+.tabs{display:flex;gap:16px;align-items:center;justify-content:center;margin:14px 0 10px;flex-wrap:wrap}
+.tab{cursor:pointer;font-size:14px;color:#0f172a;opacity:.65;padding:8px 12px;border-radius:999px;border:1px solid transparent}
+.tab.active{opacity:1;border-color:#d7dbe3;background:#f7f8fb}
+.search{margin:14px auto 18px;max-width:min(720px,92vw);display:flex;gap:8px;align-items:center;justify-content:center}
+.search input{width:100%;padding:18px 18px;border:1px solid var(--border);border-radius:14px;background:#fff;font-size:18px;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:16px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.imgbox{background:var(--card);display:flex;align-items:center;justify-content:center}
+.imgbox img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block}
+.imgbox .ph{width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:#9aa3af;border:1px dashed #d4d7de;margin:12px;border-radius:10px;text-align:center;padding:8px}
+.info{padding:14px}
+.info b{display:block;font-size:16px;margin-bottom:2px}
+.info small{color:var(--muted)}
+.badge{display:inline-block;margin-left:6px;border:1px solid #dbe1ea;border-radius:999px;padding:2px 8px;font-size:11px;color:#4b5563;background:#f8fafc}
 </style>
 </head>
 <body>
-<header>
-  <div class="brand">
-    <span class="badge">Lost Mary</span>
-    <b>BM1000 Turbo · Sabores</b>
-  </div>
-  <div class="filters" role="group" aria-label="Filtros">
-    <span class="select-wrap"><select id="fNic" aria-label="Con o sin nicotina"></select></span>
-    <span class="select-wrap"><select id="fCal" aria-label="Número de caladas"></select></span>
-    <span class="select-wrap"><select id="fMar" aria-label="Marca"></select></span>
-  </div>
-</header>
-
-<main class="container">
-  <section class="hero" aria-label="Detalle">
-    <div class="hero-img">
-      <img id="heroImg" alt="Imagen del sabor" style="display:none">
-      <div id="heroPh" class="ph" style="display:none"></div>
+  <section class="hero"><img src="data:image/webp;base64,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" alt="Vaya Cachimbas"></section>
+  <div class="wrap">
+    <div class="tabs">
+      <span class="tab active" data-brand="">Todos</span>
+      <span class="tab" data-brand="Oxbar">Oxbar Mini</span>
+      <span class="tab" data-brand="Lost Mary">Lost Mary 1000 Turbo</span>
     </div>
-    <div class="hero-info">
-      <h1 class="title" id="heroTitle"></h1>
-      <div class="subtitle" id="heroSubtitle"></div>
-      <div class="chips" id="heroChips"></div>
-    </div>
-  </section>
-
-  <section aria-label="Resultados">
-    <div class="grid" id="grid"></div>
-  </section>
-</main>
-
-<footer>Fuente: lostmary.es (BM1000 Turbo) + distribuidores</footer>
-
+    <div class="search"><input id="q" type="search" placeholder="Buscar sabor (ej. mango, cherry, ice)"></div>
+    <div id="grid" class="grid"></div>
+  </div>
 <script>
-const ITEMS = [{"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Triple Melon", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Triple Mango", "imagen_url": "https://vaperhouse.es/8632-large_default/vaper-desechable-lost-mary-bm1000-triple-mango.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Strawberry Kiwi", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Pineapple Ice", "imagen_url": "https://masquevapor.com/87628-large_default/disposable-vape-lost-mary-bm1000-pineapple-ice-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Strawberry Guava", "imagen_url": "https://masquevapor.com/87643-large_default/disposable-vape-lost-mary-bm1000-strawberry-guava-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Pineapple Coconut", "imagen_url": "https://masquevapor.com/87630-large_default/disposable-vape-lost-mary-bm1000-pineapple-coconut-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Pineapple Mango", "imagen_url": "https://masquevapor.com/87629-large_default/disposable-vape-lost-mary-bm1000-pineapple-mango-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Grape", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Blueberry", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Blueberry-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Peach Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Peach-Ice-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Menthol", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Menthol-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Lemon Lime", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Lemon-Lime-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Cherry Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Cherry-Ice-2-600x600.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Watermelon Ice", "imagen_url": "https://masquevapor.com/87647-large_default/disposable-vape-lost-mary-bm1000-watermelon-ice-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Blueberry Sour Raspberry", "imagen_url": "https://masquevapor.com/87613-large_default/disposable-vape-lost-mary-bm1000-blueberry-sour-raspberry-20mg-2ml.jpg"}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Rose Lemonade", "imagen_url": ""}, {"nicotina": "con", "caladas": "1000", "marca": "Lost Mary", "modelo": "BM1000 Turbo", "capacidad_ml": "2", "sabor_es": "Strawberry Ice", "imagen_url": "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Strawberry-Ice-2-600x600.jpg"}];
+const ITEMS = [{"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Blue Mint", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/BlueMint.png?v=1693906510"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Coconut Melon", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/CoconutMelon_c8167ebb-2259-4fda-9c1b-d8ebd3ccea2a.png?v=1693906508"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Fuji Apple Melon", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/FujiAppleMelon_ede98332-44ea-4fef-8da8-e1a5938b1a20.png?v=1693906510"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Grape Cranberries", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/GrapeCranberries.png?v=1693906510"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Lemon & Lime", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/lemon_lime.png?v=1693906510"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Mango Slushy", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/MangoSlushy.png?v=1693906510"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Pineapple Apple Pear", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/PineappleApplePear.png?v=1693906510"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Rainbow Drop", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/RainbowDrop_960be059-1378-4d3c-b78e-e11e3fc3fa91.png?v=1693906507"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Sea Salt Litchi", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/SeaSaltLitchi.png?v=1693906509"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Strawberry Mango", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/StrawberryMango_973ea4bf-7097-45bf-bf5a-2c9f4de6958e.png?v=1693906510"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Strawberry Marshmallow", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/StrawberryMarshmallow.png?v=1693906509"]}, {"brand": "Oxbar", "series": "Mini", "puffs": 600, "name": "Watermelon Cherry", "imgs": ["https://cdn.shopifycdn.net/s/files/1/0584/6709/0582/files/WatermelonCherry_435bf301-f2e0-4f66-b8fa-ec47b7ccb812.png?v=1693906510"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Triple Melon", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-triple-melon_300x300.jpg", "https://pevgrow.com/47573-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-triple-melon-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Triple Mango", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-triple-mango_300x300.jpg", "https://pevgrow.com/47574-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-triple-mango-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Strawberry Kiwi", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-strawberry-kiwi_300x300.jpg", "https://pevgrow.com/47575-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-strawberry-kiwi-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Pineapple Ice", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-pineapple-ice_300x300.jpg", "https://pevgrow.com/47580-medium_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-pineapple-ice-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Strawberry Guava", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-strawberry-guava_300x300.jpg", "https://pevgrow.com/47577-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-strawberry-guava-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Pineapple Coconut", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-pineapple-coconut_300x300.jpg", "https://pevgrow.com/47581-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-pineapple-coconut-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Pineapple Mango", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-pineapple-mango_300x300.jpg", "https://pevgrow.com/47579-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-pineapple-mango-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Grape", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-grape_300x300.jpg", "https://pevgrow.com/47582-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-grape-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Blueberry", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm-1000-blueberry_300x300.jpg", "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Blueberry-2-600x600.jpg"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Peach Ice", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm-1000-peach-ice_300x300.jpg", "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Peach-Ice-2-600x600.jpg"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Menthol", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm-1000-menthol_300x300.jpg", "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Menthol-2-600x600.jpg"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Lemon Lime", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm-1000-lemon-lime_1_300x300.jpg", "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Lemon-Lime-2-600x600.jpg"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Cherry Ice", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-cherry-ice_300x300.jpg", "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Cherry-Ice-2-600x600.jpg"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Watermelon Ice", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-watermelon-ice_300x300.jpg", "https://pevgrow.com/47572-medium_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-watermelon-ice-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Blueberry Sour Raspberry", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-blueberry-sour-raspberry_300x300.jpg", "https://masquevapor.com/87613-large_default/disposable-vape-lost-mary-bm1000-blueberry-sour-raspberry-20mg-2ml.jpg"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Rose Lemonade", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-rose-lemonade_300x300.jpg", "https://pevgrow.com/47578-large_default/vaper-usa-e-getta-lost-mary-bm1000-turbo-rose-lemonade-2.webp"]}, {"brand": "Lost Mary", "series": "BM1000 Turbo", "puffs": 1000, "name": "Strawberry Ice", "imgs": ["https://lostmary.es/cdn/shop/files/lost-mary-bm1000-strawberry-ice_300x300.jpg", "https://vaporbros.net/wp-content/uploads/2024/09/Lost-Mary-BM1000-Turbo-Strawberry-Ice-2-600x600.jpg"]}];
 
-const $fNic = document.getElementById('fNic');
-const $fCal = document.getElementById('fCal');
-const $fMar = document.getElementById('fMar');
-const $grid = document.getElementById('grid');
-const $heroImg = document.getElementById('heroImg');
-const $heroPh  = document.getElementById('heroPh');
-const $heroTitle = document.getElementById('heroTitle');
-const $heroSubtitle = document.getElementById('heroSubtitle');
-const $heroChips = document.getElementById('heroChips');
+const grid = document.getElementById('grid');
+const q = document.getElementById('q');
+const tabs = [...document.querySelectorAll('.tab')];
+let currentBrand = '';
 
-const dedupe = arr => [...new Set(arr.filter(Boolean))];
-
-function populateFilters(items){
-  $fNic.innerHTML = '<option value="">Con o sin nicotina</option>' + dedupe(items.map(o=>o.nicotina)).map(v=>`<option value="${v}">${v}</option>`).join('');
-  $fCal.innerHTML = '<option value="">Número de caladas</option>' + dedupe(items.map(o=>String(o.caladas))).map(v=>`<option value="${v}">${v}</option>`).join('');
-  $fMar.innerHTML = '<option value="">Marca</option>' + dedupe(items.map(o=>o.marca)).map(v=>`<option value="${v}">${v}</option>`).join('');
-  if (dedupe(items.map(o=>o.marca)).length === 1) $fMar.value = items[0].marca;
-  if (dedupe(items.map(o=>String(o.caladas))).length === 1) $fCal.value = String(items[0].caladas);
-  if (dedupe(items.map(o=>o.nicotina)).length === 1) $fNic.value = items[0].nicotina;
+function placeholder(text){
+  const div = document.createElement('div'); div.className='ph'; div.textContent = text; return div;
 }
 
-function filter(items){
-  const a = $fNic.value, b = $fCal.value, c = $fMar.value;
-  return items.filter(o =>
-    (!a || o.nicotina===a) &&
-    (!b || String(o.caladas)===b) &&
-    (!c || o.marca===c)
-  );
+function mountImage(imgbox, urls, alt){
+  if(!urls || !urls.length) { imgbox.appendChild(placeholder(alt)); return; }
+  let i = 0;
+  const img = document.createElement('img'); img.alt = alt; img.loading='lazy';
+  img.src = urls[i];
+  img.onerror = () => { i++; if(i < urls.length) img.src = urls[i]; else img.replaceWith(placeholder(alt)); };
+  imgbox.appendChild(img);
 }
 
-function renderGrid(items){
-  $grid.innerHTML = '';
-  items.forEach(o=>{
-    const card = document.createElement('div'); card.className='card'; card.tabIndex=0;
-    if (o.imagen_url){
-      const img = document.createElement('img'); img.alt=o.sabor_es; img.src = o.imagen_url;
-      card.appendChild(img);
-    } else {
-      const ph = document.createElement('div'); ph.className='ph'; ph.textContent = o.sabor_es + ' — ' + o.marca + (o.modelo? ' · ' + o.modelo : '');
-      card.appendChild(ph);
-    }
-    const name = document.createElement('b'); name.textContent = o.sabor_es;
-    const meta = document.createElement('div'); meta.className='meta'; meta.textContent = o.marca + (o.modelo? ' · '+o.modelo : '');
-    card.appendChild(name); card.appendChild(meta);
-    card.addEventListener('click', ()=>focus(o));
-    card.addEventListener('keypress', e => { if(e.key==='Enter' || e.key===' ') focus(o); });
-    $grid.appendChild(card);
-  });
+function card(o){
+  const article = document.createElement('article'); article.className='card';
+  const imgbox = document.createElement('div'); imgbox.className='imgbox';
+  const urls = o.imgs || (o.img ? [o.img] : []);
+  mountImage(imgbox, urls, o.name);
+  const info = document.createElement('div'); info.className='info';
+  const b = document.createElement('b'); b.textContent = o.name;
+  const small = document.createElement('small'); small.textContent = `${o.brand} · ${o.series} · ${o.puffs} cal.`;
+  info.appendChild(b); info.appendChild(small);
+  article.appendChild(imgbox); article.appendChild(info);
+  return article;
 }
 
-function focus(o){
-  if (o.imagen_url){
-    $heroImg.src = o.imagen_url; $heroImg.style.display='block'; $heroPh.style.display='none';
-  } else {
-    $heroImg.style.display='none'; $heroPh.style.display='flex';
-    $heroPh.textContent = o.sabor_es + ' — ' + o.marca + (o.modelo? ' · ' + o.modelo : '');
-  }
-  $heroTitle.textContent = o.sabor_es;
-  $heroSubtitle.textContent = o.marca + (o.modelo? ' · '+o.modelo : '');
-  $heroChips.innerHTML = '';
-  if(o.capacidad_ml) $heroChips.innerHTML += `<span class="pill">${o.capacidad_ml} ml</span>`;
-  if(o.caladas) $heroChips.innerHTML += `<span class="pill">${o.caladas} caladas</span>`;
+function render(list){
+  grid.innerHTML = '';
+  list.forEach(o => grid.appendChild(card(o)));
 }
 
-function update(){
-  const list = filter(ITEMS);
-  renderGrid(list);
-  if(list.length) focus(list[0]);
+function apply(){
+  const term = (q.value||'').toLowerCase().trim();
+  const out = ITEMS.filter(o => (!currentBrand || o.brand===currentBrand) && (!term || o.name.toLowerCase().includes(term)));
+  render(out);
 }
 
-populateFilters(ITEMS);
-$fNic.addEventListener('change', update);
-$fCal.addEventListener('change', update);
-$fMar.addEventListener('change', update);
-update();
+tabs.forEach(t => t.addEventListener('click', () => { tabs.forEach(x=>x.classList.remove('active')); t.classList.add('active'); currentBrand = t.dataset.brand; apply(); }));
+q.addEventListener('input', apply);
+apply();
 </script>
 </body>
 </html>
